@@ -1,8 +1,9 @@
 import React from "react";
+import "./index.less";
 
 const App = () => (
-  <div>
-    <h1>App componen</h1>
+  <div class="one">
+    <h1>App ssosmsspossndden</h1>
   </div>
 );
 

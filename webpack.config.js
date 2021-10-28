@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
   mode: "development",
@@ -26,7 +27,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "less-loader"],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
       },
       {
         test: /\.png|svg|jpg|gif$/,
