@@ -1,2 +1,2 @@
 # TodoApp
-todoApp implemented on the front end only
+todoApp implemented on the frontend
