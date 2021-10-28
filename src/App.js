@@ -1,8 +1,8 @@
 import React from "react";
 
 const App = () => (
-  <div class="one">
-    <h1>App ssosmsspoFssndden</h1>
+  <div class="App">
+    <h1>Add a Note</h1>
   </div>
 );
 
