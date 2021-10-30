@@ -23,3 +23,84 @@ body .App h1,
 #root .App h1 {
   color: black;
 }
+html .App .note-list,
+body .App .note-list,
+.App .App .note-list,
+#root .App .note-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+html .App .note-list .note,
+body .App .note-list .note,
+.App .App .note-list .note,
+#root .App .note-list .note {
+  background: #cadd1e;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: left;
+}
+html .App form,
+body .App form,
+.App .App form,
+#root .App form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+html .App label,
+body .App label,
+.App .App label,
+#root .App label {
+  margin-bottom: -12px;
+  text-align: left;
+  width: 200px;
+}
+html .App input,
+body .App input,
+.App .App input,
+#root .App input,
+html .App textarea,
+body .App textarea,
+.App .App textarea,
+#root .App textarea {
+  width: 200px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  border: 1px solid #ff65a3;
+  border-radius: 4px;
+}
+html .App button,
+body .App button,
+.App .App button,
+#root .App button {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: #ff0a78;
+}
+html .App button:hover,
+body .App button:hover,
+.App .App button:hover,
+#root .App button:hover {
+  background-color: #ff6392;
+}
+html .App button:active,
+body .App button:active,
+.App .App button:active,
+#root .App button:active {
+  top: 2px;
+}

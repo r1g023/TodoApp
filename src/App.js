@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Notes from "../components/Notes";
+import Notes from "./components/Notes";
+import NoteForm from "./components/NoteForm";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -10,9 +11,10 @@ const App = () => {
     },
   ]);
   return (
-    <div class="App">
+    <div className="App">
       <h1>Add a Note</h1>
-      <Notes />
+      <NoteForm />
+      <Notes notes={notes} />
     </div>
   );
 };

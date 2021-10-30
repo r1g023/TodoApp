@@ -7,7 +7,6 @@ const Notes = (props) => {
         <div className="note" key={note.id}>
           <h2>{note.title}</h2>
           <p>{note.body}</p>
-          h1 p
         </div>
       ))}
     </div>
