@@ -10,10 +10,21 @@ const App = () => {
       body: "One should never stop learning",
     },
   ]);
+
+  //add a new note, passed from props on NoteForm
+  const addNewNote = (note) => {
+    const newNote = {
+      id: Date.now(),
+      title: note.title,
+      body: note.title,
+    };
+    //copy original notes array, and add new Note to it
+    setNotes([...notes, newNote]);
+  };
   return (
     <div className="App">
       <h1>Add a Note</h1>
-      <NoteForm />
+      <NoteForm addNewNote={addNewNote} />
       <Notes notes={notes} />
     </div>
   );
