@@ -50,22 +50,22 @@ body .App form,
   flex-flow: column nowrap;
   align-items: center;
 }
-html .App label,
-body .App label,
-.App .App label,
-#root .App label {
+html .App form label,
+body .App form label,
+.App .App form label,
+#root .App form label {
   margin-bottom: -12px;
   text-align: left;
   width: 200px;
 }
-html .App input,
-body .App input,
-.App .App input,
-#root .App input,
-html .App textarea,
-body .App textarea,
-.App .App textarea,
-#root .App textarea {
+html .App form input,
+body .App form input,
+.App .App form input,
+#root .App form input,
+html .App form textarea,
+body .App form textarea,
+.App .App form textarea,
+#root .App form textarea {
   width: 200px;
   padding: 15px 22px;
   margin: 10px 5px;
@@ -73,10 +73,10 @@ body .App textarea,
   border: 1px solid #ff65a3;
   border-radius: 4px;
 }
-html .App button,
-body .App button,
-.App .App button,
-#root .App button {
+html .App form button,
+body .App form button,
+.App .App form button,
+#root .App form button {
   min-width: 130px;
   height: 40px;
   color: #fff;
@@ -92,15 +92,15 @@ body .App button,
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   background: #ff0a78;
 }
-html .App button:hover,
-body .App button:hover,
-.App .App button:hover,
-#root .App button:hover {
+html .App form button:hover,
+body .App form button:hover,
+.App .App form button:hover,
+#root .App form button:hover {
   background-color: #ff6392;
 }
-html .App button:active,
-body .App button:active,
-.App .App button:active,
-#root .App button:active {
+html .App form button:active,
+body .App form button:active,
+.App .App form button:active,
+#root .App form button:active {
   top: 2px;
 }
