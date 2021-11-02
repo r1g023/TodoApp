@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NoteForm = (e) => {
+const NoteForm = (props) => {
   const [note, setNote] = useState({
     title: "",
     body: "",
