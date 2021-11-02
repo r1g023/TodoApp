@@ -13,7 +13,7 @@ body .App,
 #root .App {
   font-family: "Patrick Hand", cursive;
   text-align: center;
-  background-image: linear-gradient(-3deg, #79fafe 40%, #79fafe 100%);
+  background-image: linear-gradient(-3deg, #07b4f9 40%, skyblue 100%);
   padding: 32px;
   letter-spacing: 2px;
 }
@@ -34,7 +34,7 @@ html .App .note-list .note,
 body .App .note-list .note,
 .App .App .note-list .note,
 #root .App .note-list .note {
-  background: #cadd1e;
+  background: #ffff88;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
   width: 100%;
   max-width: 250px;
