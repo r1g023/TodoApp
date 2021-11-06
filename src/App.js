@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+
 import Note from "./components/Note";
 import noteList from "./note-list";
 import Form from "./components/Form";
+
+
 
 const App = () => {
   const [notes, setNotes] = useState(noteList);
