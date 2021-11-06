@@ -54,6 +54,7 @@ const NoteForm = (props) => {
         onChange={handleChanges}
         value={note.body}
       ></textarea>
+      <input type="checkbox" />
       <button type="submit">Add Note</button>
     </form>
   );
