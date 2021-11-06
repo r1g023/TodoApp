@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useLocalStorage } from "./LocalStorage";
 
 const NoteForm = (props) => {
   const [note, setNote] = useState({
@@ -7,10 +6,8 @@ const NoteForm = (props) => {
     body: "",
   });
 
-  //runs before setItem useEffect hook in case you refresh, it gets the saved data in local storage
   useEffect(() => {
-    console.log("GET ITEM HOOK");
-    const data = localStorage.getItem("note");
+    let data = localStorage.getItem("note");
     if (data) {
       setNote(JSON.parse(data));
     }
@@ -18,10 +15,7 @@ const NoteForm = (props) => {
 
   useEffect(() => {
     localStorage.setItem("note", JSON.stringify(note));
-    console.log("SET ITEM HOOK");
   }, [note]);
-
-  // const [credentials, setCredentials] = useLocalStorage(note, initialStates);
 
   //handle changes
   const handleChanges = (e) => {
