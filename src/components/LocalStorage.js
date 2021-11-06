@@ -1,5 +1,5 @@
 //point of local sotrag repalce any useSatte call where you want that data to persist.
-
+import React, { useState } from "react";
 // To retrieve an item from localStorage, call localStorage.getItem('itemName')
 // If that item doesn't exist, it will return undefined
 /////////////
@@ -25,7 +25,7 @@ export const useLocalStorage = (key, initialValue) => {
   const setValue = (value) => {
     // Save state
     setStoredValue(value);
-    console.log(storedValue, "storedvalue");
+    // console.log(storedValue, "storedvalue");
     // Save to local storage
     window.localStorage.setItem(key, JSON.stringify(value));
   };

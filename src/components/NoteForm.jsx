@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocalStorage } from "./LocalStorage";
+// import { useLocalStorage } from "./LocalStorage";
 
 const NoteForm = (props) => {
   const [note, setNote] = useState({
@@ -7,14 +7,28 @@ const NoteForm = (props) => {
     body: "",
   });
 
-  const [credentials, setCredentials] = useLocalStorage(key, initialStates);
+  //runs before setItem useEffect hook in case you refresh, it gets the saved data in local storage
+  useEffect(() => {
+    console.log("GET ITEM HOOK");
+    const data = localStorage.getItem("note");
+    if (data) {
+      setNote(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("note", JSON.stringify(note));
+    console.log("SET ITEM HOOK");
+  }, [note]);
+
+  // const [credentials, setCredentials] = useLocalStorage(note, initialStates);
 
   //handle changes
   const handleChanges = (e) => {
     e.persist();
     console.log(e.target.name, ":", e.target.value);
-    setCredentials({
-      ...credentials,
+    setNote({
+      ...note,
       [e.target.name]: e.target.value,
     });
   };
@@ -46,6 +60,7 @@ const NoteForm = (props) => {
         onChange={handleChanges}
         value={note.body}
       ></textarea>
+      <input type="checkbox" />
       <button type="submit">Add Note</button>
     </form>
   );
