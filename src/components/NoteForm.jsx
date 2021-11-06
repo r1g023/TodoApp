@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useLocalStorage } from "./LocalStorage";
 
 const NoteForm = (props) => {
   const [note, setNote] = useState({
@@ -7,14 +6,23 @@ const NoteForm = (props) => {
     body: "",
   });
 
-  const [credentials, setCredentials] = useLocalStorage(key, initialStates);
+  useEffect(() => {
+    let data = localStorage.getItem("note");
+    if (data) {
+      setNote(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("note", JSON.stringify(note));
+  }, [note]);
 
   //handle changes
   const handleChanges = (e) => {
     e.persist();
     console.log(e.target.name, ":", e.target.value);
-    setCredentials({
-      ...credentials,
+    setNote({
+      ...note,
       [e.target.name]: e.target.value,
     });
   };
