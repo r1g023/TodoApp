@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Note from "./components/Note";
+
 import NoteForm from "./components/NoteForm";
 import noteList from "./note-list";
 
@@ -32,7 +33,7 @@ const App = () => {
       <h1>Add a Note</h1>
       <NoteForm addNewNote={addNewNote} />
       <Note notes={notes} />
-    </div>
+  </div>
   );
 };
 
