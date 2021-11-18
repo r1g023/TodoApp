@@ -81,6 +81,17 @@ body .App form textarea,
   border: 1px solid #ff65a3;
   border-radius: 4px;
 }
+html .App form input:focus,
+body .App form input:focus,
+.App .App form input:focus,
+#root .App form input:focus,
+html .App form textarea:focus,
+body .App form textarea:focus,
+.App .App form textarea:focus,
+#root .App form textarea:focus {
+  outline: none;
+  border-color: #99991c;
+}
 html .App form button,
 body .App form button,
 .App .App form button,
