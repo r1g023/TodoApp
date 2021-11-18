@@ -3,6 +3,19 @@ import React, { useState, useEffect } from "react";
 const NoteForm = (props) => {
   const [note, setNote] = useState({ title: "", body: "" });
 
+  useEffect(() => {
+    console.log("getItem localstorage");
+    const data = localStorage.getItem("note");
+    if (data) {
+      setNote(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("setItem localstore");
+    localStorage.setItem("note", JSON.stringify(note));
+  }, [note]);
+
   const handleChanges = (e) => {
     console.log(e.target.name, ": ", e.target.value);
     e.persist();

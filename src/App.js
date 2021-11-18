@@ -6,6 +6,17 @@ import noteList from "./note-list";
 const App = () => {
   const [notes, setNote] = useState(noteList);
 
+  //get Item from localStorage, e.g. 'note card'
+  useEffect(() => {
+    const data = localStorage.getItem("notes");
+    data ? setNote(JSON.parse(data)) : null;
+  }, []);
+
+  //save note card to local storage
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   //add newNote from props on Noteform
   const addNewNote = (note) => {
     console.log("note--->", note);
