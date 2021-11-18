@@ -6,7 +6,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Add a Note .</h1>
+
+
+
+      <h1>Add a Note.</h1>
+
     </div>
   );
 };
