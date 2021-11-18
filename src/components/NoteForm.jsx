@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const NoteForm = (props) => {
   const [note, setNote] = useState({ title: "", body: "" });
 
+  //get Item from localStorage, e.g. 'form input data'
   useEffect(() => {
     console.log("getItem localstorage");
     const data = localStorage.getItem("note");
@@ -11,6 +12,7 @@ const NoteForm = (props) => {
     }
   }, []);
 
+  //setITEM from localStorage e.g 'form input data'
   useEffect(() => {
     console.log("setItem localstore");
     localStorage.setItem("note", JSON.stringify(note));
@@ -25,6 +27,7 @@ const NoteForm = (props) => {
     });
   };
 
+  //onsubmit, add a new note to the existing notes array
   const handleSubmit = (e) => {
     e.preventDefault();
     props.addNewNote(note);
