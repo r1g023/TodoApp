@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Note from "./components/Note";
 import NoteForm from "./components/NoteForm";
-import noteList from "./note-list";
+import { noteList, increment } from "./note-list";
 
 const App = () => {
-  const [notes, setNote] = useState(noteList);
+  const [notes, setNotes] = useState({ noteList });
+  console.log("notes.noteList---->", notes.noteList, "and---->", notes);
 
   //get Item from localStorage, e.g. 'note card'
   useEffect(() => {
     const data = localStorage.getItem("notes");
-    data ? setNote(JSON.parse(data)) : null;
+    data ? setNotes(JSON.parse(data)) : null;
   }, []);
 
   //save note card to local storage
@@ -17,22 +18,44 @@ const App = () => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
+  //delete a note card by it's index on the array
+  function deleteNote(index) {
+    const notesArray = [...notes.noteList];
+    //remove note on clicked index of notes array and remove just 1 item
+    notesArray.splice(index, 1);
+    setNotes({
+      ...notes,
+      noteList: notesArray,
+    });
+  }
+
   //add newNote from props on Noteform
   const addNewNote = (note) => {
     console.log("note--->", note);
     const newNote = {
-      id: Date.now(),
+      id: increment(),
       title: note.title,
       body: note.body,
     };
-    setNote([...notes, newNote]);
+    setNotes({
+      ...notes,
+      noteList: [...notes.noteList, newNote],
+    });
   };
 
   return (
     <div className="App">
       <h1>Add a Note</h1>
       <NoteForm addNewNote={addNewNote} />
-      <Note data={notes} />
+      <div className="note-list">
+        {notes.noteList.map((item, index) => (
+          <Note
+            data={item}
+            key={item.id}
+            deleteNote={() => deleteNote(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
