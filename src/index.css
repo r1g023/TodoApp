@@ -51,6 +51,13 @@ body .App .note-list .note,
   margin: 16px auto;
   text-align: left;
 }
+html .App .note-list .note code,
+body .App .note-list .note code,
+.App .App .note-list .note code,
+#root .App .note-list .note code {
+  font-size: 10px;
+  color: purple;
+}
 html .App .note-list .note .fa-trash-o,
 body .App .note-list .note .fa-trash-o,
 .App .App .note-list .note .fa-trash-o,
