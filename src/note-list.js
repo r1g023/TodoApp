@@ -16,5 +16,6 @@ export const noteList = [
     id: increment(),
     title: "first note",
     body: "my first posted note",
+    completed: false,
   },
 ];

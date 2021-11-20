@@ -69,6 +69,21 @@ body .App .note-list .note .fa-trash-o,
   top: 10px;
   right: 10px;
 }
+html .App .note-list .completed,
+body .App .note-list .completed,
+.App .App .note-list .completed,
+#root .App .note-list .completed {
+  position: relative;
+  background: green;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+  width: 100%;
+  max-width: 250px;
+  word-wrap: break-word;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: left;
+  cursor: pointer;
+}
 html .App form,
 body .App form,
 .App .App form,
