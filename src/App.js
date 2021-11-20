@@ -43,6 +43,22 @@ const App = () => {
     });
   };
 
+  //toggle note card
+  function toggleCard(itemID) {
+    setNotes({
+      ...notes,
+      noteList: notes.noteList.map((item) => {
+        if (item.id === itemID) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      }),
+    });
+  }
+
   return (
     <div className="App">
       <h1>Add a Note</h1>
@@ -53,6 +69,7 @@ const App = () => {
             data={item}
             key={item.id}
             deleteNote={() => deleteNote(index)}
+            toggleCard={toggleCard}
           />
         ))}
       </div>

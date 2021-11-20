@@ -1,8 +1,11 @@
 import React from "react";
 
-function Note({ data, deleteNote }) {
+function Note({ data, deleteNote, toggleCard }) {
   return (
-    <div className="note">
+    <div
+      className={`note${data.completed ? " completed" : ""}`}
+      onClick={() => toggleCard(data.id)}
+    >
       <code>Note ID# {data.id}</code>
       <h2>{data.title}</h2>
       <p>{data.body}</p>
