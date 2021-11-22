@@ -18,14 +18,22 @@ const App = () => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
-  //delete a note card by it's index on the array
-  function deleteNote(index) {
-    const notesArray = [...notes.noteList];
-    //remove note on clicked index of notes array and remove just 1 item
-    notesArray.splice(index, 1);
+  //delete a note card by it's index on the array, no toggle option
+  // function deleteNote(index) {
+  //   const notesArray = [...notes.noteList];
+  //   //remove note on clicked index of notes array and remove just 1 item
+  //   notesArray.splice(index, 1);
+  //   setNotes({
+  //     ...notes,
+  //     noteList: notesArray,
+  //   });
+  // }
+
+  //if toggle completed, delete Note
+  function deleteNote() {
     setNotes({
       ...notes,
-      noteList: notesArray,
+      noteList: notes.noteList.filter((item) => !item.completed),
     });
   }
 
