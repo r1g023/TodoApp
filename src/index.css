@@ -36,6 +36,7 @@ body .App .note-list,
 #root .App .note-list {
   display: flex;
   flex-wrap: wrap;
+  /* Rounded sliders */
 }
 html .App .note-list .note,
 body .App .note-list .note,
@@ -74,6 +75,83 @@ body .App .note-list .completed,
 .App .App .note-list .completed,
 #root .App .note-list .completed {
   text-decoration: line-through red 3px;
+}
+html .App .note-list .switch,
+body .App .note-list .switch,
+.App .App .note-list .switch,
+#root .App .note-list .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+html .App .note-list .switch input,
+body .App .note-list .switch input,
+.App .App .note-list .switch input,
+#root .App .note-list .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+html .App .note-list .slider,
+body .App .note-list .slider,
+.App .App .note-list .slider,
+#root .App .note-list .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+html .App .note-list .slider:before,
+body .App .note-list .slider:before,
+.App .App .note-list .slider:before,
+#root .App .note-list .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+html .App .note-list input:checked + .slider,
+body .App .note-list input:checked + .slider,
+.App .App .note-list input:checked + .slider,
+#root .App .note-list input:checked + .slider {
+  background-color: #2196f3;
+}
+html .App .note-list input:focus + .slider,
+body .App .note-list input:focus + .slider,
+.App .App .note-list input:focus + .slider,
+#root .App .note-list input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+html .App .note-list input:checked + .slider:before,
+body .App .note-list input:checked + .slider:before,
+.App .App .note-list input:checked + .slider:before,
+#root .App .note-list input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+html .App .note-list .slider.round,
+body .App .note-list .slider.round,
+.App .App .note-list .slider.round,
+#root .App .note-list .slider.round {
+  border-radius: 34px;
+}
+html .App .note-list .slider.round:before,
+body .App .note-list .slider.round:before,
+.App .App .note-list .slider.round:before,
+#root .App .note-list .slider.round:before {
+  border-radius: 50%;
 }
 html .App form,
 body .App form,
