@@ -22,6 +22,7 @@ const App = () => {
       ...notes,
       noteList: notes.noteList.map((item) => {
         if (item.id === itemID) {
+          console.log(item.completed);
           return {
             ...item,
             completed: !item.completed,

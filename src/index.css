@@ -51,10 +51,10 @@ body .App .note-list .note,
   text-align: left;
   /* Rounded sliders */
 }
-html .App .note-list .note .completed .true,
-body .App .note-list .note .completed .true,
-.App .App .note-list .note .completed .true,
-#root .App .note-list .note .completed .true {
+html .App .note-list .note .completed,
+body .App .note-list .note .completed,
+.App .App .note-list .note .completed,
+#root .App .note-list .note .completed {
   text-decoration: line-through;
 }
 html .App .note-list .note .switch,
