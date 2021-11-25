@@ -52,6 +52,7 @@ const NoteForm = (props) => {
         onChange={handleChanges}
         value={note.body}
       ></textarea>
+
       <button>Add Note</button>
     </form>
   );
