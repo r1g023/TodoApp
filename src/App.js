@@ -30,10 +30,19 @@ const App = () => {
   // }
 
   //if toggle completed, delete Note
-  function deleteNote() {
+  function toggleComplete(itemID) {
     setNotes({
       ...notes,
-      noteList: notes.noteList.filter((item) => !item.completed),
+      noteList: notes.noteList.map((item) => {
+        if (item.id === itemID) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        } else {
+          return item;
+        }
+      }),
     });
   }
 
@@ -51,34 +60,13 @@ const App = () => {
     });
   };
 
-  //toggle note card
-  function toggleCard(itemID) {
-    setNotes({
-      ...notes,
-      noteList: notes.noteList.map((item) => {
-        if (item.id === itemID) {
-          return {
-            ...item,
-            completed: !item.completed,
-          };
-        }
-        return item;
-      }),
-    });
-  }
-
   return (
     <div className="App">
       <h1>Add a Note</h1>
       <NoteForm addNewNote={addNewNote} />
       <div className="note-list">
         {notes.noteList.map((item, index) => (
-          <Note
-            data={item}
-            key={item.id}
-            deleteNote={() => deleteNote(index)}
-            toggleCard={toggleCard}
-          />
+          <Note data={item} key={item.id} toggleComplete={toggleComplete} />
         ))}
       </div>
     </div>
