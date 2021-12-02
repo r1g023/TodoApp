@@ -5,7 +5,6 @@ import { noteList, increment } from "./note-list";
 
 const App = () => {
   const [notes, setNotes] = useState({ noteList });
-  console.log("notes.noteList---->", notes.noteList, "and---->", notes);
 
   //get Item from localStorage, e.g. 'note card'
   useEffect(() => {
